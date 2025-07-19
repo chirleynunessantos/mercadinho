@@ -129,4 +129,40 @@ public class ProdutosRepository {
 		
 		
 	}
+
+	public Produtos buscarProduto(File file, String codigoProduto) {
+		
+	
+		Produtos produtos= null;
+		try {
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		String line;
+		
+	
+			while ((line = br.readLine())!=null) {
+				 String[] partesStrings = line.split(",");
+				 if(partesStrings[4].equals(codigoProduto)) {
+					 
+					 String nome = partesStrings[0];
+					 String descrição = partesStrings[1];
+					 double preco = Double.parseDouble(partesStrings[2]);
+					 int quantidadEstoque =  Integer.parseInt( partesStrings[3]);
+					 String codigo =  partesStrings[4];
+					 double peso = Double.parseDouble( partesStrings[5]);
+				 
+					 produtos = new Produtos(nome,descrição,preco,quantidadEstoque,codigo,peso);
+				 }
+			
+				
+			}
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return produtos;
+	}
 }

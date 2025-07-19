@@ -47,7 +47,14 @@ public class ProdutosControllers {
 		
 		return ResponseEntity.ok().build();
 	}
-	
+
+	@GetMapping("{codigoProduto}")
+	private ResponseEntity<Produtos> buscarProduto(@PathVariable(value = "codigoProduto") String codigoProduto ) {
+				
+		Produtos produtos = pordutoService.buscarProduto(codigoProduto);
+		
+		return ResponseEntity.ok(produtos);
+	}
 	@GetMapping
 	private ResponseEntity<List<Produtos>> listarTodosProdutos() {
 				

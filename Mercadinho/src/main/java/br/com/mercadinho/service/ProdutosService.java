@@ -18,10 +18,10 @@ public class ProdutosService {
 
 	@Autowired
 	ProdutosRepository  produtosRepository;
-	
+	File file = new File("C:\\Users\\PICHAU\\git\\repository\\Mercadinho\\arquivos\\produtos.txt");
+
 	public void deleteProduto(String codigoProduto) {
 		
-		File file = new File("C:\\Users\\PICHAU\\git\\repository\\Mercadinho\\arquivos\\produtos.txt");
 		
 		if(	file.exists()) {				
 			
@@ -32,7 +32,6 @@ public class ProdutosService {
 	
 	public 	List<Produtos> listarTodosProdutos() {
 		List<Produtos> produtos = new ArrayList<>();
-		File file = new File("C:\\Users\\PICHAU\\git\\repository\\Mercadinho\\arquivos\\produtos.txt");
 		if(	file.exists()) {				
 			try {
 				 produtos =  produtosRepository.listarTodosProdutos(file);
@@ -49,7 +48,6 @@ public class ProdutosService {
 	
 	public void salvarProduto(Produtos produtos) {
 		
-		File file = new File("C:\\Users\\PICHAU\\git\\repository\\Mercadinho\\arquivos\\produtos.txt");
 		String linhaParaSalvar="";
 		if(	file.exists()) {				
 			String[] produtosArray = new String[6];
@@ -81,7 +79,6 @@ public class ProdutosService {
 	}
 
 	public void alterarProduto(Produtos produtos) {
-		File file = new File("C:\\Users\\PICHAU\\git\\repository\\Mercadinho\\arquivos\\produtos.txt");
 		String linhaParaSalvar="";
 		if(	file.exists()) {				
 			String[] produtosArray = new String[6];
@@ -110,6 +107,11 @@ public class ProdutosService {
 			}
 		}
 		
+	}
+
+	public Produtos buscarProduto(String codigoProduto) {
+		return 	produtosRepository.buscarProduto(file,codigoProduto);
+
 	}
 	
 }
