@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import br.com.mercadinho.model.Cliente;
 
 @Service
-public class ClienteRepository {
+public class ClienteFileRepository {
 
 	public void salvarCliente(File file, String cliente) {
 

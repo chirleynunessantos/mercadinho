@@ -11,19 +11,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.mercadinho.model.Produtos;
-import br.com.mercadinho.service.ProdutosService;
-import jakarta.websocket.server.PathParam;
+import br.com.mercadinho.service.ProdutoService;
 
 @RestController
 @RequestMapping("/produtos")
 public class ProdutosControllers {
 
 	@Autowired
-	ProdutosService pordutoService;
+	ProdutoService pordutoService;
 	
 	@PutMapping
 	private ResponseEntity<Produtos> alterarProduto(@RequestBody Produtos produtos) {

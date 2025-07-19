@@ -1,4 +1,4 @@
-package br.com.mercadinho.service;
+package br.com.mercadinho.fileservice;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import br.com.mercadinho.filerepository.ProdutosRepository;
 import br.com.mercadinho.model.Produtos;
 @Service
-public class ProdutosService {
+public class ProdutosFileService {
 
 	@Autowired
 	ProdutosRepository  produtosRepository;

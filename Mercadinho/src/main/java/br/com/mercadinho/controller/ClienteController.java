@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.mercadinho.fileservice.ClienteFileService;
 import br.com.mercadinho.model.Cliente;
 import br.com.mercadinho.service.ClienteService;
 @RestController
@@ -21,6 +22,9 @@ public class ClienteController {
 
 	@Autowired
 	ClienteService service;
+	
+	//@Autowired
+	//ClienteFileService serviceFile;
 	
 	@PostMapping
 	public ResponseEntity<Cliente> salvarCliente(@RequestBody Cliente cliente) {
@@ -44,7 +48,7 @@ public class ClienteController {
 	
 	@GetMapping
 	public ResponseEntity<List<Cliente>> listarCliente() {		
-		List<Cliente> clientes = service.listarCliente();		
+		List<Cliente> clientes = service.listarClientes();		
 		return ResponseEntity.ok(clientes);
 	}
 	
