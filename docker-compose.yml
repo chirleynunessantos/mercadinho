@@ -1,14 +1,17 @@
 version: '2.4'
 services:
   db:
-    image: mysql
+    image: mcr.microsoft.com/mssql/server:2019-latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-    ports: 
-      - "3306:3306"
-    volumes: 
-      - mercadinho_data:/var/lib/mysql
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Makeitshine1-"
+      MSSQL_PID: "Developer"
+      MSSQL_SERVERNAME: "MercadinhoDB"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mercadinho_data:/var/opt/mssql
 
 volumes:
   mercadinho_data:
