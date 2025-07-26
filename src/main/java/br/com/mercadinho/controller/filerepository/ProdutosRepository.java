@@ -69,8 +69,8 @@ public class ProdutosRepository {
 			 int quantidadEstoque =  Integer.parseInt( partesStrings[3]);
 			 String codigoProduto =  partesStrings[4];
 			 double peso = Double.parseDouble( partesStrings[5]);
-			 Produtos produtos = new Produtos(codigoProduto,nome,descrição,preco,quantidadEstoque,peso);
-			 listaProdutos.add(produtos);
+			// Produtos produtos = new Produtos(codigoProduto,nome,descrição,preco,quantidadEstoque,peso);
+			// listaProdutos.add(produtos);
 		
 			
 		}
@@ -150,7 +150,7 @@ public class ProdutosRepository {
 					 String codigo =  partesStrings[4];
 					 double peso = Double.parseDouble( partesStrings[5]);
 				 
-					 produtos = new Produtos(codigo,nome,descrição,preco,quantidadEstoque,peso);
+					/// produtos = new Produtos(codigo,nome,descrição,preco,quantidadEstoque,peso);
 				 }
 			
 				

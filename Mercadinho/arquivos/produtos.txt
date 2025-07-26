@@ -1,2 +1,0 @@
-Macarrao,feijao,10.0,150,3,0.35
-Arroz,Arroz,10.0,200,2,0.35

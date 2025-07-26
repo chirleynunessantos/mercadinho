@@ -2,16 +2,16 @@ version: '2.4'
 services:
   db:
     image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mercadinho-sqlserver
     restart: always
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "Makeitshine1-"
+      SA_PASSWORD: "Password123@123"
       MSSQL_PID: "Developer"
-      MSSQL_SERVERNAME: "MercadinhoDB"
     ports:
-      - "1433:1433"
+      - "14330:1433"
     volumes:
-      - mercadinho_data:/var/opt/mssql
+      - mercadinho_db:/var/opt/mssql
 
 volumes:
-  mercadinho_data:
+  mercadinho_db:
