@@ -2,6 +2,7 @@ package br.com.mercadinho.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class ProdutoService {
 
 	public List<Produtos> listarTodosProdutos() {
 		List<Produtos> produtos = new ArrayList<>();
-
+		produtos = produtoRepository.findAll();
 		return produtos;
 
 	}
@@ -31,11 +32,13 @@ public class ProdutoService {
 	}
 
 	public void alterarProduto(Produtos produtos) {
-
+		produtoRepository.save(produtos);
 	}
 
-	public Produtos buscarProduto(String codigoProduto) {
-		return null;
+	public Optional<Produtos>  buscarProduto(String codigoProduto) {
+		
+		Optional<Produtos> produtos = produtoRepository.findById(codigoProduto);
+		return produtos;
 
 	}
 }

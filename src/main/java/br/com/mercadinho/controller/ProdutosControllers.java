@@ -1,6 +1,7 @@
 package br.com.mercadinho.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +37,7 @@ public class ProdutosControllers {
 		
 		pordutoService.salvarProduto(produtos);
 		
-		return ResponseEntity.ok(produtos);
+		return ResponseEntity.ok().build();
 	}
 	@DeleteMapping("{codigoProduto}")
 	private ResponseEntity<Produtos> deleteProduto(@PathVariable(value = "codigoProduto") String codigoProduto ) {
@@ -47,9 +48,9 @@ public class ProdutosControllers {
 	}
 
 	@GetMapping("{codigoProduto}")
-	private ResponseEntity<Produtos> buscarProduto(@PathVariable(value = "codigoProduto") String codigoProduto ) {
+	private ResponseEntity<Optional<Produtos>> buscarProduto(@PathVariable(value = "codigoProduto") String codigoProduto ) {
 				
-		Produtos produtos = pordutoService.buscarProduto(codigoProduto);
+		Optional<Produtos>  produtos = pordutoService.buscarProduto(codigoProduto);
 		
 		return ResponseEntity.ok(produtos);
 	}
