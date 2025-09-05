@@ -1,4 +1,4 @@
-package br.com.mercadinho.model;
+package br.com.mercadinho.model.usuario;
 
 public enum UsuariosRole {
 
